@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Fusion</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+    <script src="functions.js"></script>
+</head>
+
+<body>
+    <div class="pai">
+        <div id="topo">
+            <img src="Logo.png" alt="imagem não encontrada" id="imgLogo">
+            <img src="nome2.png" alt="imagem não encontrada" id="imgNome">
+            <div id="home" onclick="redirect('paginaPrincipal.html')">Home</div>
+            <div id="entrarCadastrar" onclick="redirect('paginaLogin.html')">
+                <img src="login2.png" alt="imagem não encontrada" id="imgLogin">
+                <p id="perfilNome">Entrar/Cadastrar</p>
+            </div>
+            <div id="carrinho">
+                <img src="carrinho.png" alt="imagem não encontrada" id="imgCarrinho">
+                Carrinho
+            </div>
+            <div id="console" onclick="openTabConsole()">Console
+                <img src="seta.png" alt="imagem não encontrada" id="imgSetaC">
+            </div>
+            <div id="computador" onclick="openTabComputador()">Computador
+                <img src="seta.png" alt="imagem não encontrada" id="imgSetaPC">
+            </div>
+            <div id="barraPesquisa">
+                <img src="lupa.png" alt="imagem não encontrada" id="imgLupa">
+                <div class="inputPesquisa">
+                    <input type="text" placeholder="Digite o que você procura..." id="mySearch">
+                </div>
+                <span id="clear" onclick="document.getElementById('mySearch').value = ''"></span>
+            </div>
+        </div>
+        <div style="display: flex;">
+            <div id="conteudo" style="height: 1000px;">
+                <div class="abaFlutuante" id="abaConsole">
+                    <div class="abaTxt" id="a1">
+                        <a href="https://www.twitch.tv/coreano">Tiro</a><br>
+                    </div>
+                    <div class="abaTxt" id="a2">
+                        <a href="https://www.twitch.tv/coreano">RPG</a><br>
+                    </div>
+                    <div class="abaTxt" id="a3">
+                        <a href="https://www.twitch.tv/coreano">Estratégia</a><br>
+                    </div>
+                    <div class="abaTxt" id="a4">
+                        <a href="https://www.twitch.tv/coreano">Simulação</a><br>
+                    </div>
+                    <div class="abaTxt" id="a5">
+                        <a href="https://www.twitch.tv/coreano">Esporte</a><br>
+                    </div>
+                    <div class="abaTxt" id="a6">
+                        <a href="https://www.twitch.tv/coreano">Terror</a><br>
+                    </div>
+                    <div class="abaTxt" id="a7">
+                        <a href="https://www.twitch.tv/coreano">Sobrevivência</a><br>
+                    </div>
+                    <div class="abaTxt" id="a8">
+                        <a href="https://www.twitch.tv/coreano">Mundo aberto</a><br>
+                    </div>
+                    <div class="abaTxt" id="a9">
+                        <a href="https://www.twitch.tv/coreano"> Multijogador</a><br>
+                    </div>
+                    <div class="abaTxt" id="a10">
+                        <a href="https://www.twitch.tv/coreano">Um jogador</a>
+                    </div>
+                </div>
+                <div class="abaFlutuante" id="abaComputador">
+                    <div class="abaTxt" id="a1">
+                        <a href="https://www.twitch.tv/coreano">Tiro</a><br>
+                    </div>
+                    <div class="abaTxt" id="a2">
+                        <a href="https://www.twitch.tv/coreano">RPG</a><br>
+                    </div>
+                    <div class="abaTxt" id="a3">
+                        <a href="https://www.twitch.tv/coreano">Estratégia</a><br>
+                    </div>
+                    <div class="abaTxt" id="a4">
+                        <a href="https://www.twitch.tv/coreano">Simulação</a><br>
+                    </div>
+                    <div class="abaTxt" id="a5">
+                        <a href="https://www.twitch.tv/coreano">Esporte</a><br>
+                    </div>
+                    <div class="abaTxt" id="a6">
+                        <a href="https://www.twitch.tv/coreano">Terror</a><br>
+                    </div>
+                    <div class="abaTxt" id="a7">
+                        <a href="https://www.twitch.tv/coreano">Sobrevivência</a><br>
+                    </div>
+                    <div class="abaTxt" id="a8">
+                        <a href="https://www.twitch.tv/coreano">Mundo aberto</a><br>
+                    </div>
+                    <div class="abaTxt" id="a9">
+                        <a href="https://www.twitch.tv/coreano"> Multijogador</a><br>
+                    </div>
+                    <div class="abaTxt" id="a10">
+                        <a href="https://www.twitch.tv/coreano">Um jogador</a>
+                    </div>
+                </div>
+                <div id="infoCadastro">
+                    <img src="login2.png" alt="imagem não encontrada" id="imgCadastrar">
+                    <p class="tituloCadastro">Criar minha conta</p>
+                    <p class="subtituloCadastro">Informe seus dados para criar sua conta.</p>
+                    <div id="barraNome">
+                        <div class="inputNome">
+                            <input type="text" autocomplete="off" placeholder="Nome:" id="nome">
+                        </div>
+                        <span id="clear" onclick="document.getElementById('nome').value = ''"></span>
+                    </div>
+                    <div id="barraSobrenome">
+                        <div class="inputSobrenome">
+                            <input type="text" autocomplete="off" placeholder="Sobrenome:" id="sobrenome">
+                        </div>
+                        <span id="clear" onclick="document.getElementById('sobrenome').value = ''"></span>
+                    </div>
+                    <div id="barraCPF">
+                        <div class="inputCPF">
+                            <input type="text" autocomplete="off" placeholder="CPF:" id="CPF">
+                        </div>
+                        <span id="clear" onclick="document.getElementById('CPF').value = ''"></span>
+                    </div>
+                    <div id="barraRG">
+                        <div class="inputRG">
+                            <input type="text" autocomplete="off" placeholder="RG:" id="RG">
+                        </div>
+                        <span id="clear" onclick="document.getElementById('RG').value = ''"></span>
+                    </div>
+                    <div id="barraEmailCadastro">
+                        <div class="inputEmailCadastro">
+                            <input type="text" autocomplete="off" placeholder="E-mail:" id="emailCadastro">
+                        </div>
+                        <span id="clear" onclick="document.getElementById('emailCadastro').value = ''"></span>
+                    </div>
+                    <div id="barraSenhaCadastro">
+                        <div class="inputSenhaCadastro">
+                            <input type="text" autocomplete="off" placeholder="Senha:" id="senhaCadastro">
+                        </div>
+                        <span id="clear" onclick="document.getElementById('senhaCadastro').value = ''"></span>
+                    </div>
+                    <div id="criarContaBtn" onclick="openTabContaCriada()">CRIAR CONTA</div>
+                </div>
+                <div id="contaCriada">
+                    <img src="check_circle_icon.png" alt="imagem não encontrada">
+                    <p>Conta criada com sucesso</p>
+                </div>
+                <div id="contaNaoCriada">
+                    <img src="x_circle_icon.png" alt="imagem não encontrada">
+                    <p>Preencha todos os campos para criar a conta</p>
+                </div>
+            </div>
+        </div>
+        <div id="rodapeCima" style="top: 100%;">
+            <div id="divRelogio"><img src="imgRelogio.png" alt="imagem não encontrada" id="imgRelogio"></div>
+            <p id="atendimentoTxt"><strong>Atendimento</strong></p>
+            <p id="horarioTxt">Segunda a sexta <strong>8h às 12h e das 14h às 18h</strong></p>
+            <div id="divTelefone"><img src="imgTelefone.png" alt="imagem não encontrada" id="imgTelefone"></div>
+            <p id="numero"><strong>(21)993089798</strong></p>
+            <div id="divCarta"><img src="imgCarta.png" alt="imagem não encontrada" id="imgCarta"></div>
+            <p id="emailSAC"><strong>sac@levelfusion.com.br</strong></p>
+        </div>
+    </div>
+    <script>
+        var tabConsole = document.getElementById("abaConsole");
+        var tabComputador = document.getElementById("abaComputador");
+        function openTabConsole() {
+            if (tabComputador.style.display === "block") {
+                tabComputador.style.display = "none";
+                tabConsole.style.display = "block";
+            } else if (tabConsole.style.display === "block") {
+                tabConsole.style.display = "none";
+            } else {
+                tabConsole.style.display = "block";
+            }
+        }
+        function openTabComputador() {
+            if (tabConsole.style.display === "block") {
+                tabConsole.style.display = "none";
+                tabComputador.style.display = "block"
+            } else if (tabComputador.style.display === "block") {
+                tabComputador.style.display = "none";
+            } else {
+                tabComputador.style.display = "block";
+            }
+        }
+        function redirect(link) {
+            window.location.href = link;
+        }
+        var criarConta = document.getElementById('criarContaBtn');
+        criarConta.addEventListener('click', function () {
+            var nome = document.getElementById('nome').value;
+            var sobrenome = document.getElementById('sobrenome').value;
+            var cpf = document.getElementById('CPF').value;
+            var rg = document.getElementById('RG').value;
+            var email = document.getElementById('emailCadastro').value;
+            var senha = document.getElementById('senhaCadastro').value;
+
+            cadastrarCliente(nome, sobrenome, cpf, rg, email, senha);
+        });
+        function openTabContaCriada() {
+            var contaCriadaDiv = document.getElementById('contaCriada');
+            var contaNaoCriadaDiv = document.getElementById('contaNaoCriada');
+            var inputNome = document.getElementById('nome').value;
+            var inputSobrenome = document.getElementById('sobrenome').value;
+            var inputCPF = document.getElementById('CPF').value;
+            var inputRG = document.getElementById('RG').value;
+            var inputEmailCadastro = document.getElementById('emailCadastro').value;
+            var inputSenhaCadastro = document.getElementById('senhaCadastro').value;
+            if (inputNome === '' || inputSobrenome === '' || inputCPF === '' || inputRG === '' || inputEmailCadastro === '' || inputSenhaCadastro === '') {
+                contaNaoCriadaDiv.style.display = 'block';
+                contaNaoCriadaDiv.classList.add('mostrar');
+
+                var tempoExibicao = 2200;
+
+                setTimeout(function () {
+                    contaNaoCriadaDiv.classList.remove('mostrar');
+
+                    setTimeout(function () {
+                        contaNaoCriadaDiv.style.display = 'none';
+                    }, 500); // Aguarda 500ms para ocultar a div
+                }, tempoExibicao);
+            } else {
+                contaCriadaDiv.style.display = 'block';
+                contaCriadaDiv.classList.add('mostrar');
+
+                var tempoExibicao = 1900;
+
+                setTimeout(function () {
+                    contaCriadaDiv.classList.remove('mostrar');
+
+                    setTimeout(function () {
+                        contaCriadaDiv.style.display = 'none';
+                    }, 500); // Aguarda 500ms para ocultar a div
+                }, tempoExibicao);
+            }
+        }
+    </script>
+</body>
+
+</html>

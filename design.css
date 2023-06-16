@@ -1,0 +1,1362 @@
+body {
+    background-color: lightgrey;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.pai {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#topo {
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    flex-shrink: 0;
+}
+
+#barraPesquisa {
+    background-color: #141414;
+    position: absolute;
+    top: 3%;
+    left: 69%;
+    width: 500px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.inputPesquisa {
+    position: relative;
+    width: 450px;
+    height: 45px;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputPesquisa input {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #969696;
+}
+
+#clear {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    right: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clear::before {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(45deg);
+}
+
+#clear::after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(315deg);
+}
+
+#imgLupa {
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    padding: 3px;
+}
+
+.abaFlutuante {
+    z-index: 3;
+    display: none;
+    position: absolute;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.583);
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.abaTxt {
+    margin: 17px;
+    transition: all 0.3s;
+}
+
+.abaTxt:hover {
+    transform: translateX(10px);
+}
+
+#abaConsole {
+    background-color: #181c36;
+    top: 17.5%;
+    right: 41%;
+    height: 400px;
+    width: 250px;
+}
+
+#abaComputador {
+    background-color: #181c36;
+    top: 17.5%;
+    right: 31%;
+    height: 400px;
+    width: 250px;
+}
+
+#carrinho {
+    font-size: 18px;
+    position: absolute;
+    height: 73px;
+    right: 5%;
+    top: 10%;
+}
+
+#carrinho:hover {
+    border-bottom: 2px solid #003cff;
+    cursor: pointer;
+}
+
+#entrarCadastrar {
+    position: absolute;
+    color: #969696;
+    right: 15%;
+    top: 10%;
+    height: 73px;
+    transition: transform 0.1s, color 0.1s;
+}
+
+#perfilNome {
+    position: relative;
+    top: -18%;
+}
+
+#entrarCadastrar:hover {
+    color: #ffffff;
+    border-bottom: 2px solid #003cff;
+    cursor: pointer;
+}
+
+#empresa {
+    font-size: 40px;
+    position: absolute;
+    right: 76%;
+    top: 2%;
+}
+
+#home {
+    color: #969696;
+    text-align: center;
+    font-size: 18px;
+    height: 73px;
+    position: absolute;
+    right: 55%;
+    top: 9%;
+    margin: 10px;
+    transition: transform 0.1s, color 0.1s;
+}
+
+#home:hover {
+    color: #ffffff;
+    border-bottom: 2px solid #003cff;
+    cursor: pointer;
+}
+
+#console {
+    color: #969696;
+    font-size: 18px;
+    height: 73px;
+    position: absolute;
+    right: 46%;
+    top: 9%;
+    margin: 10px;
+    transition: transform 0.1s, color 0.1s;
+}
+
+#console:hover {
+    color: #ffffff;
+    border-bottom: 2px solid #003cff;
+    cursor: pointer;
+}
+
+#computador {
+    color: #969696;
+    font-size: 18px;
+    height: 73px;
+    position: absolute;
+    right: 35%;
+    top: 9%;
+    margin: 10px;
+    transition: transform 0.1s, color 0.1s;
+}
+
+#computador:hover {
+    color: #ffffff;
+    border-bottom: 2px solid #003cff;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: darkgreen;
+}
+
+#conteudo {
+    display: flex;
+    background-color: rgb(18, 18, 18);
+    flex-grow: 1;
+    height: 1500px;
+}
+
+#linha {
+    position: absolute;
+    background-color: #ffffff;
+    top: 76%;
+    right: 3%;
+    height: 1px;
+    width: 1785px;
+}
+
+#animation {
+    position: absolute;
+    top: 80%;
+    right: 43.5%;
+}
+
+.loader {
+    --path: #ffffff;
+    --dot: #0051ff;
+    --duration: 3s;
+    width: 44px;
+    height: 44px;
+    position: relative;
+}
+
+.loader:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    background: var(--dot);
+    top: 37px;
+    left: 19px;
+    transform: translate(-18px, -18px);
+    animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.loader svg rect,
+.loader svg polygon,
+.loader svg circle {
+    fill: none;
+    stroke: var(--path);
+    stroke-width: 10px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.loader svg polygon {
+    stroke-dasharray: 145 76 145 76;
+    stroke-dashoffset: 0;
+    animation: pathTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader svg rect {
+    stroke-dasharray: 192 64 192 64;
+    stroke-dashoffset: 0;
+    animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader svg circle {
+    stroke-dasharray: 150 50 150 50;
+    stroke-dashoffset: 75;
+    animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader.triangle {
+    width: 48px;
+}
+
+.loader.triangle:before {
+    left: 21px;
+    transform: translate(-10px, -18px);
+    animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+@keyframes pathTriangle {
+    33% {
+        stroke-dashoffset: 74;
+    }
+
+    66% {
+        stroke-dashoffset: 147;
+    }
+
+    100% {
+        stroke-dashoffset: 221;
+    }
+}
+
+@keyframes dotTriangle {
+    33% {
+        transform: translate(0, 0);
+    }
+
+    66% {
+        transform: translate(10px, -18px);
+    }
+
+    100% {
+        transform: translate(-10px, -18px);
+    }
+}
+
+@keyframes pathRect {
+    25% {
+        stroke-dashoffset: 64;
+    }
+
+    50% {
+        stroke-dashoffset: 128;
+    }
+
+    75% {
+        stroke-dashoffset: 192;
+    }
+
+    100% {
+        stroke-dashoffset: 256;
+    }
+}
+
+@keyframes dotRect {
+    25% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(18px, -18px);
+    }
+
+    75% {
+        transform: translate(0, -36px);
+    }
+
+    100% {
+        transform: translate(-18px, -18px);
+    }
+}
+
+@keyframes pathCircle {
+    25% {
+        stroke-dashoffset: 125;
+    }
+
+    50% {
+        stroke-dashoffset: 175;
+    }
+
+    75% {
+        stroke-dashoffset: 225;
+    }
+
+    100% {
+        stroke-dashoffset: 275;
+    }
+}
+
+.loader {
+    display: inline-block;
+    margin: 0 16px;
+}
+
+#jogosComputador {
+    z-index: 2;
+    position: absolute;
+    font-size: 18px;
+    right: 87.1%;
+    top: 23%;
+}
+
+#jogosConsole {
+    z-index: 2;
+    position: absolute;
+    font-size: 18px;
+    right: 89%;
+    top: 93%;
+}
+
+.produto {
+    z-index: 2;
+    transition: all 0.1s;
+    border: 3px solid rgb(152, 152, 152);
+    height: 350px;
+}
+
+.produto:hover {
+    transform: translateY(10px);
+}
+
+#produto1 {
+    background-color: #212121;
+    position: absolute;
+    width: 400px;
+    right: 76%;
+    top: 30%;
+}
+
+.imgProduto {
+    position: absolute;
+    height: 240px;
+    width: 400px;
+    right: 0%;
+    top: 0%;
+    transition: all 0.1s;
+}
+
+.imgProduto:hover {
+    -webkit-filter: blur(2px) brightness(77%);
+    filter: blur(2px) brightness(77%);
+}
+
+#produto2 {
+    background-color: #212121;
+    position: absolute;
+    width: 400px;
+    right: 51.5%;
+    top: 30%;
+}
+
+#produto3 {
+    background-color: #212121;
+    position: absolute;
+    width: 400px;
+    right: 27.2%;
+    top: 30%;
+}
+
+#produto4 {
+    background-color: #212121;
+    position: absolute;
+    width: 400px;
+    right: 3%;
+    top: 30%;
+}
+
+#produto5 {
+    background-color: #212121;
+    position: absolute;
+    width: 400px;
+    right: 76%;
+    top: 100%;
+}
+
+#produto6 {
+    background-color: #212121;
+    position: absolute;
+    width: 400px;
+    right: 51.5%;
+    top: 100%;
+}
+
+#produto7 {
+    background-color: #212121;
+    position: absolute;
+    width: 400px;
+    right: 27.2%;
+    top: 100%;
+}
+
+#produto8 {
+    background-color: #212121;
+    position: absolute;
+    width: 400px;
+    right: 3%;
+    top: 100%;
+}
+
+#rodapeCima {
+    background-color: #212121;
+    border-radius: 10px;
+    position: absolute;
+    padding: 10px;
+    height: 90px;
+    width: 1000px;
+    top: 156%;
+    right: 24%;
+}
+
+#atendimentoTxt {
+    position: absolute;
+    font-size: 18px;
+    right: 82%;
+    top: 3%;
+}
+
+#horarioTxt {
+    position: absolute;
+    font-size: 18px;
+    right: 57.5%;
+    top: 30%;
+}
+
+#numero {
+    position: absolute;
+    font-size: 18px;
+    right: 35%;
+    top: 16%;
+}
+
+#emailSAC {
+    position: absolute;
+    font-size: 18px;
+    right: 5%;
+    top: 15%;
+}
+
+#divRelogio {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    right: 94%;
+    top: 25%;
+}
+
+#imgRelogio {
+    position: absolute;
+    height: 33px;
+    width: 33px;
+    right: 10%;
+    top: 8%;
+}
+
+#divTelefone {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    right: 48.5%;
+    top: 26%;
+}
+
+#imgTelefone {
+    position: absolute;
+    height: 33px;
+    width: 33px;
+    right: 10%;
+    top: 7%;
+}
+
+#divCarta {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    right: 25.5%;
+    top: 26%;
+}
+
+#imgCarta {
+    position: absolute;
+    height: 33px;
+    width: 33px;
+    right: 10%;
+    top: 7%;
+}
+
+#imgLogo {
+    position: absolute;
+    padding: 0px 65px;
+    height: 160px;
+    width: 160px;
+    float: left;
+}
+
+#imgNome {
+    position: absolute;
+    right: 66%;
+    top: 3%;
+    margin: 10px;
+    height: 100px;
+    width: 400px;
+}
+
+#imgCarrinho {
+    position: absolute;
+    right: 111%;
+    top: 4%;
+    height: 20px;
+    width: 20px;
+}
+
+#imgSetaPC {
+    position: absolute;
+    right: -20%;
+    top: 14%;
+    height: 7px;
+    width: 12px;
+}
+
+#imgSetaC {
+    position: absolute;
+    right: -30%;
+    top: 14%;
+    height: 7px;
+    width: 12px;
+}
+
+#imgSetaJogos {
+    position: absolute;
+    right: -12%;
+    top: 45%;
+    height: 7px;
+    width: 12px;
+}
+
+#imgLogin {
+    position: absolute;
+    right: 107%;
+    top: 4%;
+    height: 20px;
+    width: 20px;
+}
+
+.nomeProduto {
+    position: absolute;
+    font-size: 20px;
+    color: #ffffff;
+    width: 250px;
+    height: 58px;
+    top: 65%;
+    right: 30%;
+    display: flex;
+}
+
+.precoProduto {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    top: 65%;
+    right: 5%;
+}
+
+.comprarProduto {
+    position: absolute;
+    background-color: #121FCF;
+    border-radius: 5px;
+    top: 89%;
+    right: 2.5%;
+    width: 380px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.583);
+    cursor: pointer;
+}
+
+#abaLogin {
+    z-index: 1001;
+    display: none;
+    position: absolute;
+    background-color: #424242;
+    height: 800px;
+    width: 1000px;
+    right: 25%;
+    top: 15%;
+    border-radius: 5px;
+    box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.583);
+}
+
+#login {
+    position: absolute;
+    right: 45%;
+    top: 15%;
+    height: 500px;
+    width: 600px;
+    display: flex;
+    border-radius: 10px;
+}
+
+#imgCadeado {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 5%;
+    right: 47%;
+}
+
+.tituloCadastro {
+    position: absolute;
+    font-size: 25px;
+    top: 15%;
+    right: 31%;
+}
+
+.subtituloCadastro {
+    position: absolute;
+    font-size: 15px;
+    top: 30%;
+    right: 31%;
+}
+
+#barraEmail {
+    background-color: #212121;
+    position: absolute;
+    top: 50%;
+    left: 16.5%;
+    width: 400px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.inputEmail {
+    position: relative;
+    width: 400px;
+    height: 45px;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#email {
+    position: absolute;
+    top: 0;
+    right: -3%;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #969696;
+}
+
+#barraSenha {
+    background-color: #212121;
+    position: absolute;
+    top: 65%;
+    left: 16.5%;
+    width: 400px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.inputSenha {
+    position: relative;
+    width: 400px;
+    height: 45px;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#senha {
+    position: absolute;
+    top: 0;
+    right: -3%;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #969696;
+}
+
+#loginBtn {
+    position: absolute;
+    display: flex;
+    background-color: #121FCF;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 400px;
+    top: 85%;
+    left: 16.5%;
+    cursor: pointer;
+    box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.583);
+}
+
+#cadastrar {
+    position: absolute;
+    right: -5%;
+    top: 15%;
+    height: 500px;
+    width: 600px;
+}
+
+#imgCadastrar {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 5%;
+    right: 47%;
+}
+
+#cadastrar .tituloCadastro {
+    right: 39%;
+}
+
+#cadastrar .subtituloCadastro {
+    right: 33%;
+}
+
+#cadastrarBtn {
+    position: absolute;
+    display: flex;
+    background-color: #121FCF;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 400px;
+    top: 50%;
+    left: 16.5%;
+    cursor: pointer;
+    box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.583);
+}
+
+#infoCadastro {
+    position: absolute;
+    right: 33%;
+    top: 20%;
+    height: 700px;
+    width: 700px;
+    display: flex;
+    border-radius: 10px;
+}
+
+#infoCadastro .tituloCadastro {
+    top: 10%;
+    right: 35%;
+}
+
+#infoCadastro .subtituloCadastro {
+    top: 20%;
+    right: 30%;
+}
+
+#barraNome {
+    background-color: #212121;
+    position: absolute;
+    top: 30%;
+    left: 12%;
+    width: 250px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.inputNome {
+    position: relative;
+    width: 250px;
+    height: 45px;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nome {
+    position: absolute;
+    top: 0;
+    right: -3%;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #969696;
+}
+
+#barraSobrenome {
+    background-color: #212121;
+    position: absolute;
+    top: 30%;
+    left: 52%;
+    width: 250px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.inputSobrenome {
+    position: relative;
+    width: 250px;
+    height: 45px;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sobrenome {
+    position: absolute;
+    top: 0;
+    right: -3%;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #969696;
+}
+
+#barraCPF {
+    background-color: #212121;
+    position: absolute;
+    top: 45%;
+    left: 12%;
+    width: 250px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.inputCPF {
+    position: relative;
+    width: 250px;
+    height: 45px;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#CPF {
+    position: absolute;
+    top: 0;
+    right: -3%;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #969696;
+}
+
+#barraRG {
+    background-color: #212121;
+    position: absolute;
+    top: 45%;
+    left: 52%;
+    width: 250px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.inputRG {
+    position: relative;
+    width: 250px;
+    height: 45px;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#RG {
+    position: absolute;
+    top: 0;
+    right: -3%;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #969696;
+}
+
+#barraEmailCadastro {
+    background-color: #212121;
+    position: absolute;
+    top: 60%;
+    left: 12%;
+    width: 532px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.inputEmailCadastro {
+    position: relative;
+    width: 530px;
+    height: 45px;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#emailCadastro {
+    position: absolute;
+    top: 0;
+    right: -3%;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #969696;
+}
+
+#barraSenhaCadastro {
+    background-color: #212121;
+    position: absolute;
+    top: 75%;
+    left: 12%;
+    width: 532px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.inputSenhaCadastro {
+    position: relative;
+    width: 530px;
+    height: 45px;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#senhaCadastro {
+    position: absolute;
+    top: 0;
+    right: -3%;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #969696;
+}
+
+#criarContaBtn {
+    position: absolute;
+    display: flex;
+    background-color: #121FCF;
+    font-size: 20px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 532px;
+    top: 90%;
+    left: 12%;
+    cursor: pointer;
+    box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.583);
+}
+
+#abaCarrinho {
+    z-index: 1000;
+    position: absolute;
+    background-color: #424242;
+    height: 700px;
+    width: 700px;
+    right: 32%;
+    top: 15%;
+    box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.583);
+    display: none;
+}
+
+#topoCarrinho {
+    z-index: 1000;
+    position: absolute;
+    background-color: #0051ff;
+    width: 700px;
+    height: 80px;
+}
+
+#topoCarrinho p {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    top: -15%;
+    right: 35%;
+}
+
+#topoCarrinho img {
+    position: absolute;
+    top: 30%;
+    right: 62%;
+    height: 30px;
+    width: 30px;
+}
+
+.produtoCarrinho {
+    position: absolute;
+    background-color: #2c2c2c;
+    width: 700px;
+    height: 100px;
+}
+
+#imgProdutoCarrinho img {
+    padding: 0px 0px 0px 5px;
+    height: 100px;
+    width: 160px;
+}
+
+#nomeProdutoCarrinho {
+    position: absolute;
+
+    width: 300px;
+    height: 80px;
+    right: 30%;
+    top: 24%;
+}
+
+.precoProdutoCarrinho {
+    position: absolute;
+    font-size: 25px;
+    font-weight: bold;
+    right: 10%;
+    top: 20%;
+}
+
+#valorTotalCarrinho {
+    position: absolute;
+    font-weight: bold;
+    font-size: 25px;
+    top: 79%;
+    right: 5%;
+}
+
+#finalizarCompra {
+    position: absolute;
+    top: 87%;
+    right: 5%;
+    background-color: #121FCF;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 630px;
+    height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.583);
+}
+
+#compraRealizada {
+    z-index: 1002;
+    position: absolute;
+    display: none;
+    background-color: #0e8f00;
+    top: 40%;
+    right: 21%;
+    height: 100px;
+    width: 420px;
+    border-radius: 5px;
+    box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.583);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#compraRealizada p {
+    position: absolute;
+    font-weight: bold;
+    font-size: 16px;
+    top: 25%;
+    right: 10%;
+}
+
+#compraRealizada img {
+    position: absolute;
+    top: 33%;
+    right: 85%;
+    height: 35px;
+    width: 35px;
+}
+
+#compraRealizada.mostrar {
+    opacity: 1;
+}
+
+#produtoAdicionado {
+    z-index: 1001;
+    background-color: #0e8f00;
+    display: none;
+    position: fixed;
+    top: 15%;
+    right: 39%;
+    height: 100px;
+    width: 420px;
+    border-radius: 5px;
+    box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.583);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#produtoAdicionado.mostrar {
+    opacity: 1;
+}
+
+#produtoAdicionado p {
+    position: absolute;
+    font-weight: bold;
+    font-size: 20px;
+    top: 17%;
+    right: 10%;
+}
+
+#produtoAdicionado img {
+    position: absolute;
+    top: 33%;
+    right: 85%;
+    height: 35px;
+    width: 35px;
+}
+
+#produtoNaoAdicionado {
+    z-index: 1001;
+    background-color: #8f0000;
+    display: none;
+    position: fixed;
+    top: 15%;
+    right: 39%;
+    height: 100px;
+    width: 420px;
+    border-radius: 5px;
+    box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.583);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#produtoNaoAdicionado.mostrar {
+    opacity: 1;
+}
+
+#produtoNaoAdicionado p {
+    position: absolute;
+    font-weight: bold;
+    font-size: 17px;
+    top: 22%;
+    right: 10%;
+}
+
+#produtoNaoAdicionado img {
+    position: absolute;
+    top: 33%;
+    right: 85%;
+    height: 35px;
+    width: 35px;
+}
+
+
+#contaCriada {
+    z-index: 1001;
+    background-color: #0e8f00;
+    display: none;
+    position: fixed;
+    top: 15%;
+    right: 41.5%;
+    height: 100px;
+    width: 380px;
+    border-radius: 5px;
+    box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.583);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#contaCriada.mostrar {
+    opacity: 1;
+}
+
+#contaCriada p {
+    position: absolute;
+    font-weight: bold;
+    font-size: 20px;
+    top: 17%;
+    right: 12%;
+}
+
+#contaCriada img {
+    position: absolute;
+    top: 33%;
+    right: 85%;
+    height: 35px;
+    width: 35px;
+}
+
+#contaNaoCriada {
+    z-index: 1001;
+    background-color: #8f0000;
+    display: none;
+    position: fixed;
+    top: 15%;
+    right: 38.5%;
+    height: 100px;
+    width: 500px;
+    border-radius: 5px;
+    box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.583);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#contaNaoCriada.mostrar {
+    opacity: 1;
+}
+
+#contaNaoCriada p {
+    position: absolute;
+    font-weight: bold;
+    font-size: 17px;
+    top: 22%;
+    right: 10%;
+}
+
+#contaNaoCriada img {
+    position: absolute;
+    top: 33%;
+    right: 85%;
+    height: 35px;
+    width: 35px;
+}

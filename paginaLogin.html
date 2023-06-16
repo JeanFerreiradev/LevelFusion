@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Fusion</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+    <script src="functions.js"></script>
+</head>
+
+<body>
+    <div class="pai">
+        <div id="topo">
+            <img src="Logo.png" alt="imagem não encontrada" id="imgLogo">
+            <img src="nome2.png" alt="imagem não encontrada" id="imgNome">
+            <div id="home" onclick="redirect('paginaPrincipal.html')">Home</div>
+            <div id="entrarCadastrar" onclick="redirect('paginaLogin.html')">
+                <img src="login2.png" alt="imagem não encontrada" id="imgLogin">
+                <p id="perfilNome">Entrar/Cadastrar</p>
+            </div>
+            <div id="carrinho">
+                <img src="carrinho.png" alt="imagem não encontrada" id="imgCarrinho">
+                Carrinho
+            </div>
+            <div id="console" onclick="openTabConsole()">Console
+                <img src="seta.png" alt="imagem não encontrada" id="imgSetaC">
+            </div>
+            <div id="computador" onclick="openTabComputador()">Computador
+                <img src="seta.png" alt="imagem não encontrada" id="imgSetaPC">
+            </div>
+            <div id="barraPesquisa">
+                <img src="lupa.png" alt="imagem não encontrada" id="imgLupa">
+                <div class="inputPesquisa">
+                    <input type="text" placeholder="Digite o que você procura..." id="mySearch">
+                </div>
+                <span id="clear" onclick="document.getElementById('mySearch').value = ''"></span>
+            </div>
+        </div>
+        <div style="display: flex;">
+            <div id="conteudo" style="height: 1000px;">
+                <div class="abaFlutuante" id="abaConsole">
+                    <div class="abaTxt" id="a1">
+                        <a href="https://www.twitch.tv/coreano">Tiro</a><br>
+                    </div>
+                    <div class="abaTxt" id="a2">
+                        <a href="https://www.twitch.tv/coreano">RPG</a><br>
+                    </div>
+                    <div class="abaTxt" id="a3">
+                        <a href="https://www.twitch.tv/coreano">Estratégia</a><br>
+                    </div>
+                    <div class="abaTxt" id="a4">
+                        <a href="https://www.twitch.tv/coreano">Simulação</a><br>
+                    </div>
+                    <div class="abaTxt" id="a5">
+                        <a href="https://www.twitch.tv/coreano">Esporte</a><br>
+                    </div>
+                    <div class="abaTxt" id="a6">
+                        <a href="https://www.twitch.tv/coreano">Terror</a><br>
+                    </div>
+                    <div class="abaTxt" id="a7">
+                        <a href="https://www.twitch.tv/coreano">Sobrevivência</a><br>
+                    </div>
+                    <div class="abaTxt" id="a8">
+                        <a href="https://www.twitch.tv/coreano">Mundo aberto</a><br>
+                    </div>
+                    <div class="abaTxt" id="a9">
+                        <a href="https://www.twitch.tv/coreano"> Multijogador</a><br>
+                    </div>
+                    <div class="abaTxt" id="a10">
+                        <a href="https://www.twitch.tv/coreano">Um jogador</a>
+                    </div>
+                </div>
+                <div class="abaFlutuante" id="abaComputador">
+                    <div class="abaTxt" id="a1">
+                        <a href="https://www.twitch.tv/coreano">Tiro</a><br>
+                    </div>
+                    <div class="abaTxt" id="a2">
+                        <a href="https://www.twitch.tv/coreano">RPG</a><br>
+                    </div>
+                    <div class="abaTxt" id="a3">
+                        <a href="https://www.twitch.tv/coreano">Estratégia</a><br>
+                    </div>
+                    <div class="abaTxt" id="a4">
+                        <a href="https://www.twitch.tv/coreano">Simulação</a><br>
+                    </div>
+                    <div class="abaTxt" id="a5">
+                        <a href="https://www.twitch.tv/coreano">Esporte</a><br>
+                    </div>
+                    <div class="abaTxt" id="a6">
+                        <a href="https://www.twitch.tv/coreano">Terror</a><br>
+                    </div>
+                    <div class="abaTxt" id="a7">
+                        <a href="https://www.twitch.tv/coreano">Sobrevivência</a><br>
+                    </div>
+                    <div class="abaTxt" id="a8">
+                        <a href="https://www.twitch.tv/coreano">Mundo aberto</a><br>
+                    </div>
+                    <div class="abaTxt" id="a9">
+                        <a href="https://www.twitch.tv/coreano"> Multijogador</a><br>
+                    </div>
+                    <div class="abaTxt" id="a10">
+                        <a href="https://www.twitch.tv/coreano">Um jogador</a>
+                    </div>
+                </div>
+                <div id="login">
+                    <img src="imgCadeado.png" alt="imagem não encontrada" id="imgCadeado">
+                    <p class="tituloCadastro">Já possui uma conta?</p>
+                    <p class="subtituloCadastro">informe seus dados para acessá-la.</p>
+                    <div id="barraEmail">
+                        <div class="inputEmail">
+                            <input type="text" autocomplete="off" placeholder="E-mail:" id="email">
+                        </div>
+                        <span id="clear" onclick="document.getElementById('email').value = ''"></span>
+                    </div>
+                    <div id="barraSenha">
+                        <div class="inputSenha">
+                            <input type="text" autocomplete="off" placeholder="Senha:" id="senha">
+                        </div>
+                        <span id="clear" onclick="document.getElementById('senha').value = ''"></span>
+                    </div>
+                    <div id="loginBtn">ACESSAR CONTA</div>
+                </div>
+                <div id="cadastrar">
+                    <img src="login2.png" alt="imagem não encontrada" id="imgCadastrar">
+                    <p class="tituloCadastro">Novo cliente</p>
+                    <p class="subtituloCadastro">Criar uma conta é rápido e fácil !</p>
+                    <div id="cadastrarBtn" onclick="redirect('paginaCadastro.html')">CADASTRE-SE</div>
+                </div>
+            </div>
+        </div>
+        <div id="rodapeCima" style="top: 105%;">
+            <div id="divRelogio"><img src="imgRelogio.png" alt="imagem não encontrada" id="imgRelogio"></div>
+            <p id="atendimentoTxt"><strong>Atendimento</strong></p>
+            <p id="horarioTxt">Segunda a sexta <strong>8h às 12h e das 14h às 18h</strong></p>
+            <div id="divTelefone"><img src="imgTelefone.png" alt="imagem não encontrada" id="imgTelefone"></div>
+            <p id="numero"><strong>(21)993089798</strong></p>
+            <div id="divCarta"><img src="imgCarta.png" alt="imagem não encontrada" id="imgCarta"></div>
+            <p id="emailSAC"><strong>sac@levelfusion.com.br</strong></p>
+        </div>
+    </div>
+    <script>
+        var tabConsole = document.getElementById("abaConsole");
+        var tabComputador = document.getElementById("abaComputador");
+        function openTabConsole() {
+            if (tabComputador.style.display === "block") {
+                tabComputador.style.display = "none";
+                tabConsole.style.display = "block";
+            } else if (tabConsole.style.display === "block") {
+                tabConsole.style.display = "none";
+            } else {
+                tabConsole.style.display = "block";
+            }
+        }
+        function openTabComputador() {
+            if (tabConsole.style.display === "block") {
+                tabConsole.style.display = "none";
+                tabComputador.style.display = "block"
+            } else if (tabComputador.style.display === "block") {
+                tabComputador.style.display = "none";
+            } else {
+                tabComputador.style.display = "block";
+            }
+        }
+
+        var loginBtn = document.getElementById('loginBtn');
+        loginBtn.addEventListener('click', function () {
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+
+            realizarLogin(email, senha);
+        });
+
+        function redirect(link) {
+            window.location.href = link;
+        }
+    </script>
+</body>
+
+</html>

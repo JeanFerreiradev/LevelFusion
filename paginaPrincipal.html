@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Fusion</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+    <script src="functions.js"></script>
+
+</head>
+
+<body>
+    <div class="pai">
+        <div id="topo">
+            <img src="Logo.png" alt="imagem não encontrada" id="imgLogo">
+            <img src="nome2.png" alt="imagem não encontrada" id="imgNome">
+            <div id="home">Home</div>
+            <div id="entrarCadastrar">
+                <img src="login2.png" alt="imagem não encontrada" id="imgLogin">
+                <p id="perfilNome">Entrar/Cadastrar</p>
+            </div>
+            <div id="carrinho">
+                <img src="carrinho.png" alt="imagem não encontrada" id="imgCarrinho">
+                Carrinho
+            </div>
+            <div id="console" onclick="openTabConsole()">Console
+                <img src="seta.png" alt="imagem não encontrada" id="imgSetaC">
+            </div>
+            <div id="computador" onclick="openTabComputador()">Computador
+                <img src="seta.png" alt="imagem não encontrada" id="imgSetaPC">
+            </div>
+            <div id="barraPesquisa">
+                <img src="lupa.png" alt="imagem não encontrada" id="imgLupa">
+                <div class="inputPesquisa">
+                    <input type="text" placeholder="Digite o que você procura..." id="mySearch">
+                </div>
+                <span id="clear" onclick="document.getElementById('mySearch').value = ''"></span>
+            </div>
+        </div>
+        <div style="display: flex;">
+            <div id="conteudo">
+                <div class="abaFlutuante" id="abaConsole">
+                    <div class="abaTxt" id="a1">
+                        <a href="https://www.twitch.tv/coreano">Tiro</a><br>
+                    </div>
+                    <div class="abaTxt" id="a2">
+                        <a href="https://www.twitch.tv/coreano">RPG</a><br>
+                    </div>
+                    <div class="abaTxt" id="a3">
+                        <a href="https://www.twitch.tv/coreano">Estratégia</a><br>
+                    </div>
+                    <div class="abaTxt" id="a4">
+                        <a href="https://www.twitch.tv/coreano">Simulação</a><br>
+                    </div>
+                    <div class="abaTxt" id="a5">
+                        <a href="https://www.twitch.tv/coreano">Esporte</a><br>
+                    </div>
+                    <div class="abaTxt" id="a6">
+                        <a href="https://www.twitch.tv/coreano">Terror</a><br>
+                    </div>
+                    <div class="abaTxt" id="a7">
+                        <a href="https://www.twitch.tv/coreano">Sobrevivência</a><br>
+                    </div>
+                    <div class="abaTxt" id="a8">
+                        <a href="https://www.twitch.tv/coreano">Mundo aberto</a><br>
+                    </div>
+                    <div class="abaTxt" id="a9">
+                        <a href="https://www.twitch.tv/coreano"> Multijogador</a><br>
+                    </div>
+                    <div class="abaTxt" id="a10">
+                        <a href="https://www.twitch.tv/coreano">Um jogador</a>
+                    </div>
+                </div>
+                <div class="abaFlutuante" id="abaComputador">
+                    <div class="abaTxt" id="a1">
+                        <a href="https://www.twitch.tv/coreano">Tiro</a><br>
+                    </div>
+                    <div class="abaTxt" id="a2">
+                        <a href="https://www.twitch.tv/coreano">RPG</a><br>
+                    </div>
+                    <div class="abaTxt" id="a3">
+                        <a href="https://www.twitch.tv/coreano">Estratégia</a><br>
+                    </div>
+                    <div class="abaTxt" id="a4">
+                        <a href="https://www.twitch.tv/coreano">Simulação</a><br>
+                    </div>
+                    <div class="abaTxt" id="a5">
+                        <a href="https://www.twitch.tv/coreano">Esporte</a><br>
+                    </div>
+                    <div class="abaTxt" id="a6">
+                        <a href="https://www.twitch.tv/coreano">Terror</a><br>
+                    </div>
+                    <div class="abaTxt" id="a7">
+                        <a href="https://www.twitch.tv/coreano">Sobrevivência</a><br>
+                    </div>
+                    <div class="abaTxt" id="a8">
+                        <a href="https://www.twitch.tv/coreano">Mundo aberto</a><br>
+                    </div>
+                    <div class="abaTxt" id="a9">
+                        <a href="https://www.twitch.tv/coreano"> Multijogador</a><br>
+                    </div>
+                    <div class="abaTxt" id="a10">
+                        <a href="https://www.twitch.tv/coreano">Um jogador</a>
+                    </div>
+                </div>
+                <div id="jogosComputador">Jogos para computador
+                    <img src="seta.png" alt="imagem não encontrada" id="imgSetaJogos">
+                </div>
+                <div class="produto" id="produto1" data-parametro="1">
+                    <img src="fifa23.png" alt="imagem não encontrada" class="imgProduto"><br>
+                    <p class="nomeProduto" id="nomeProduto1"></p>
+                    <p class="precoProduto" id="precoProduto1"></p>
+                    <div class="comprarProduto" id="1" onclick="openTabProdutoAdicionado()">
+                        <p>COMPRAR</p>
+                    </div>
+                </div>
+                <div class="produto" id="produto2" data-parametro="2">
+                    <img src="csgo.png" alt="imagem não encontrada" class="imgProduto"><br>
+                    <p class="nomeProduto" id="nomeProduto2">COUNTER-STRIKE: GO</p>
+                    <p class="precoProduto" id="precoProduto2">R$ 30.99</p>
+                    <div class="comprarProduto" id="2" onclick="openTabProdutoAdicionado()">
+                        <p>COMPRAR</p>
+                    </div>
+                </div>
+                <div class="produto" id="produto3" data-parametro="3">
+                    <img src="godOfWar.png" alt="imagem não encontrada" class="imgProduto"><br>
+                    <p class="nomeProduto" id="nomeProduto3"></p>
+                    <p class="precoProduto" id="precoProduto3"></p>
+                    <div class="comprarProduto" id="3" onclick="openTabProdutoAdicionado()">
+                        <p>COMPRAR</p>
+                    </div>
+                </div>
+                <div class="produto" id="produto4" data-parametro="4">
+                    <img src="codMw2.png" alt="imagem não encontrada" class="imgProduto"><br>
+                    <p class="nomeProduto" id="nomeProduto4"></p>
+                    <p class="precoProduto" id="precoProduto4"></p>
+                    <div class="comprarProduto" id="4" onclick="openTabProdutoAdicionado()">
+                        <p>COMPRAR</p>
+                    </div>
+                </div>
+                <div class="produto" id="produto5" data-parametro="5">
+                    <img src="spiderMan.png" alt="imagem não encontrada" class="imgProduto"><br>
+                    <p class="nomeProduto" id="nomeProduto5"></p>
+                    <p class="precoProduto" id="precoProduto5"></p>
+                    <div class="comprarProduto" id="5" onclick="openTabProdutoAdicionado()">
+                        <p>COMPRAR</p>
+                    </div>
+                </div>
+                <div class="produto" id="produto6" data-parametro="6">
+                    <img src="godOfWarRagnarok.png" alt="imagem não encontrada" class="imgProduto"><br>
+                    <p class="nomeProduto" id="nomeProduto6"></p>
+                    <p class="precoProduto" id="precoProduto6"></p>
+                    <div class="comprarProduto" id="6" onclick="openTabProdutoAdicionado()">
+                        <p>COMPRAR</p>
+                    </div>
+                </div>
+                <div class="produto" id="produto7" data-parametro="7">
+                    <img src="marioKartDeluxe.png" alt="imagem não encontrada" class="imgProduto"><br>
+                    <p class="nomeProduto" id="nomeProduto7"></p>
+                    <p class="precoProduto" id="precoProduto7"></p>
+                    <div class="comprarProduto" id="7" onclick="openTabProdutoAdicionado()">
+                        <p>COMPRAR</p>
+                    </div>
+                </div>
+                <div class="produto" id="produto8" data-parametro="8">
+                    <img src="haloInfinite.png" alt="imagem não encontrada" class="imgProduto"><br>
+                    <p class="nomeProduto" id="nomeProduto8"></p>
+                    <p class="precoProduto" id="precoProduto8"></p>
+                    <div class="comprarProduto" id="8" onclick="openTabProdutoAdicionado()">
+                        <p>COMPRAR</p>
+                    </div>
+                </div>
+                <div id="jogosConsole">Jogos para console
+                    <img src="seta.png" alt="imagem não encontrada" id="imgSetaJogos">
+                </div>
+                <div style="visibility: hidden;">
+                    <hr id="linha">
+                </div>
+                <div id="animation" style="visibility: visible;">
+                    <div class="loader">
+                        <svg viewBox="0 0 80 80">
+                            <circle id="test" cx="40" cy="40" r="32"></circle>
+                        </svg>
+                    </div>
+
+                    <div class="loader triangle">
+                        <svg viewBox="0 0 86 80">
+                            <polygon points="43 8 79 72 7 72"></polygon>
+                        </svg>
+                    </div>
+
+                    <div class="loader">
+                        <svg viewBox="0 0 80 80">
+                            <rect x="8" y="8" width="64" height="64"></rect>
+                        </svg>
+                    </div>
+                </div>
+
+                <div id="abaLogin">
+                    <div id="login">
+                        <img src="imgCadeado.png" alt="imagem não encontrada" id="imgCadeado">
+                        <p class="tituloCadastro">Já possui uma conta?</p>
+                        <p class="subtituloCadastro">informe seus dados para acessá-la.</p>
+                        <div id="barraEmail">
+                            <div class="inputEmail">
+                                <input type="text" autocomplete="off" placeholder="E-mail:" id="email">
+                            </div>
+                            <span id="clear" onclick="document.getElementById('email').value = ''"></span>
+                        </div>
+                        <div id="barraSenha">
+                            <div class="inputSenha">
+                                <input type="text" autocomplete="off" placeholder="Senha:" id="senha">
+                            </div>
+                            <span id="clear" onclick="document.getElementById('senha').value = ''"></span>
+                        </div>
+                        <div id="loginBtn">ACESSAR CONTA</div>
+                    </div>
+                    <div id="cadastrar">
+                        <img src="login2.png" alt="imagem não encontrada" id="imgCadastrar">
+                        <p class="tituloCadastro">Novo cliente</p>
+                        <p class="subtituloCadastro">Criar uma conta é rápido e fácil !</p>
+                        <div id="cadastrarBtn" onclick="redirect('paginaCadastro.html')">CADASTRE-SE</div>
+                    </div>
+                </div>
+
+                <div id="abaCarrinho">
+                    <div id="topoCarrinho">
+                        <img src="carrinho.png" alt="imagem não encontrada">
+                        <p>Seu carrinho</p>
+                    </div>
+                    <div class="produtoCarrinho">
+                        <div id="imgPordutoCarrinho"></div>
+                        <div id="nomeProdutoCarrinho"></div>
+                        <div class="precoProdutoCarrinho"></div>
+                        <div id="cleaner"></div>
+                    </div>
+                    <div id="valorTotalCarrinho">
+                    </div>
+                    <div id="finalizarCompra" onclick="openTabCompraRealizada()">
+                        <p>FINALIZAR COMPRA</p>
+                    </div>
+                    <div id="compraRealizada">
+                        <img src="check_circle_icon.png" alt="imagem não encontrada">
+                        <p>COMPRA REALIZADA COM SUCESSO</p>
+                    </div>
+                </div>
+                <div id="produtoAdicionado">
+                    <img src="check_circle_icon.png" alt="imagem não encontrada">
+                    <p>Produto adicionado ao carrinho</p>
+                </div>
+                <div id="produtoNaoAdicionado">
+                    <img src="x_circle_icon.png" alt="imagem não encontrada">
+                    <p>Faça login para adicionar ao carrinho</p>
+                </div>
+            </div>
+        </div>
+        <div id="rodapeCima">
+            <div id="divRelogio"><img src="imgRelogio.png" alt="imagem não encontrada" id="imgRelogio"></div>
+            <p id="atendimentoTxt"><strong>Atendimento</strong></p>
+            <p id="horarioTxt">Segunda a sexta <strong>8h às 12h e das 14h às 18h</strong></p>
+            <div id="divTelefone"><img src="imgTelefone.png" alt="imagem não encontrada" id="imgTelefone"></div>
+            <p id="numero"><strong>(21)993089798</strong></p>
+            <div id="divCarta"><img src="imgCarta.png" alt="imagem não encontrada" id="imgCarta"></div>
+            <p id="emailSAC"><strong>sac@levelfusion.com.br</strong></p>
+        </div>
+    </div>
+    <script>
+        var tabConsole = document.getElementById("abaConsole");
+        var tabComputador = document.getElementById("abaComputador");
+        function openTabConsole() {
+            if (tabComputador.style.display === "block") {
+                tabComputador.style.display = "none";
+                tabConsole.style.display = "block";
+            } else if (tabConsole.style.display === "block") {
+                tabConsole.style.display = "none";
+            } else {
+                tabConsole.style.display = "block";
+            }
+        }
+        function openTabComputador() {
+            if (tabConsole.style.display === "block") {
+                tabConsole.style.display = "none";
+                tabComputador.style.display = "block"
+            } else if (tabComputador.style.display === "block") {
+                tabComputador.style.display = "none";
+            } else {
+                tabComputador.style.display = "block";
+            }
+        }
+        function redirect(link) {
+            window.location.href = link;
+        }
+        var carrinhoDiv = document.getElementById('carrinho');
+        var abaCarrinhoDiv = document.getElementById('abaCarrinho');
+
+        carrinhoDiv.addEventListener('click', function () {
+            if (abaCarrinhoDiv.style.display === 'block') {
+                abaCarrinhoDiv.style.display = 'none';
+            } else {
+                abaCarrinhoDiv.style.display = 'block';
+            }
+        });
+        var produto1Div = document.getElementById('1');
+        produto1Div.addEventListener('click', function () {
+            adicionarProdutoNoCarrinho('produto1');
+            atualizarValorTotal();
+        });
+        var produto1Div = document.getElementById('2');
+        produto1Div.addEventListener('click', function () {
+            adicionarProdutoNoCarrinho('produto2');
+        });
+        var produto1Div = document.getElementById('3');
+        produto1Div.addEventListener('click', function () {
+            adicionarProdutoNoCarrinho('produto3');
+        });
+        var produto1Div = document.getElementById('4');
+        produto1Div.addEventListener('click', function () {
+            adicionarProdutoNoCarrinho('produto4');
+        });
+        var produto1Div = document.getElementById('5');
+        produto1Div.addEventListener('click', function () {
+            adicionarProdutoNoCarrinho('produto5');
+        });
+        var produto1Div = document.getElementById('6');
+        produto1Div.addEventListener('click', function () {
+            adicionarProdutoNoCarrinho('produto6');
+        });
+        var produto1Div = document.getElementById('7');
+        produto1Div.addEventListener('click', function () {
+            adicionarProdutoNoCarrinho('produto7');
+        });
+        var produto1Div = document.getElementById('8');
+        produto1Div.addEventListener('click', function () {
+            adicionarProdutoNoCarrinho('produto8');
+        });
+
+        var loginDiv = document.getElementById('entrarCadastrar');
+        var abaLoginDiv = document.getElementById('abaLogin');
+
+        loginDiv.addEventListener('click', function () {
+            if (abaLoginDiv.style.display === 'block') {
+                abaLoginDiv.style.display = 'none';
+            } else {
+                abaLoginDiv.style.display = 'block';
+            }
+        });
+
+        var loginBtn = document.getElementById('loginBtn');
+        loginBtn.addEventListener('click', function () {
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+           
+            realizarLogin(email, senha);
+            console.log('chamando funcao carrinho:');
+            buscarCarrinhoUsuario(email);
+        });
+
+        var criarConta = document.getElementById('criarContaBtn');
+        criarConta.addEventListener('click', function () {
+            var nome = document.getElementById('nome').value;
+            var sobrenome = document.getElementById('sobrenome').value;
+            var cpf = document.getElementById('CPF').value;
+            var rg = document.getElementById('RG').value;
+            var email = document.getElementById('emailCadastro').value;
+            var senha = document.getElementById('senhaCadastro').value;
+
+            cadastrarCliente(nome, sobrenome, cpf, rg, email, senha);
+        });
+
+        function openTabProdutoAdicionado() {
+            var produtoAdicionadoDiv = document.getElementById('produtoAdicionado');
+            var produtoNaoAdicionadoDiv = document.getElementById('produtoNaoAdicionado');
+            if (perfilNome.textContent !== 'Entrar/Cadastrar') {
+                produtoAdicionadoDiv.style.display = 'block';
+                produtoAdicionadoDiv.classList.add('mostrar');
+
+                var tempoExibicao = 1900;
+
+                setTimeout(function () {
+                    produtoAdicionadoDiv.classList.remove('mostrar');
+
+                    setTimeout(function () {
+                        produtoAdicionadoDiv.style.display = 'none';
+                    }, 500); // Aguarda 500ms para ocultar a div
+                }, tempoExibicao);
+            } else {
+                produtoNaoAdicionadoDiv.style.display = 'block';
+                produtoNaoAdicionadoDiv.classList.add('mostrar');
+
+                var tempoExibicao = 1900;
+
+                setTimeout(function () {
+                    produtoNaoAdicionadoDiv.classList.remove('mostrar');
+
+                    setTimeout(function () {
+                        produtoNaoAdicionadoDiv.style.display = 'none';
+                    }, 500); // Aguarda 500ms para ocultar a div
+                }, tempoExibicao);
+            }
+        }
+    </script>
+</body>
+
+</html>
